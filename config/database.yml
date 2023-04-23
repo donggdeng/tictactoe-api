@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: tictactoe_api_development
+  database: tictactoe_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: tictactoe_api_test
+  database: tictactoe_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: tictactoe_api_production
+  database: tictactoe_production
   username: tictactoe_api
   password: <%= ENV["TICTACTOE_API_DATABASE_PASSWORD"] %>
