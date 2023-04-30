@@ -36,7 +36,7 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
-gem 'jsonapi-resources'
+gem 'jsonapi-resources', '~> 0.9.12'
 gem 'rack-cors'
 
 group :development, :test do

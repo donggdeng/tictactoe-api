@@ -98,7 +98,7 @@ GEM
     io-console (0.6.0)
     irb (1.6.4)
       reline (>= 0.3.0)
-    jsonapi-resources (0.10.7)
+    jsonapi-resources (0.9.12)
       activerecord (>= 4.1)
       concurrent-ruby
       railties (>= 4.1)
@@ -204,7 +204,7 @@ DEPENDENCIES
   debug
   factory_bot_rails
   faker
-  jsonapi-resources
+  jsonapi-resources (~> 0.9.12)
   pg (~> 1.1)
   pry
   puma (~> 5.0)
