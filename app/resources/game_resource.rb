@@ -1,7 +1,15 @@
 class GameResource < JSONAPI::Resource
-  attributes :status
+  attributes :status, :player1, :player2, :winner
 
-  has_one :player1, class_name: 'User', foreign_key: :player1_id
-  # has_one :player2, class_name: 'User', foreign_key: :player2_id
-  # has_one :winner, class_name: 'User', foreign_key: :winner_id
+  def player1
+    @model.player1.name
+  end
+
+  def player2
+    @model.player2.name
+  end
+
+  def winner
+    @model.winner&.name
+  end
 end
