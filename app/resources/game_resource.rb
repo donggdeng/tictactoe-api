@@ -12,4 +12,6 @@ class GameResource < JSONAPI::Resource
   def winner
     @model.winner&.name
   end
+
+  has_many :moves
 end

@@ -1,3 +1,3 @@
-class UsersController < JSONAPI::ResourceController
+class MovesController < JSONAPI::ResourceController
   skip_before_action :verify_authenticity_token
 end
