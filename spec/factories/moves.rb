@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :move do
     game
-    player { game.player1 }
+    player { 0 }
     position { 1 }
   end
 end
