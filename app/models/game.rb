@@ -1,7 +1,7 @@
 class Game < ApplicationRecord
   has_many :moves
 
-  enum status: { waiting: 0, playing: 1, finished: 2 }
+  enum status: { playing: 0, finished: 1 }
   enum winner: { player1: 0, player2: 1, draw: 2 }
 
   def next_player
