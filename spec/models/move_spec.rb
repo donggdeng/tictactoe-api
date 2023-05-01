@@ -41,5 +41,22 @@ RSpec.describe Move, type: :model do
         expect(move.errors.full_messages).to include("Position A valid position would be between 1 and 9")
       end
     end
+
+    context "when game is not playing" do
+      before do
+        create(:move, game: game, player: :player1, position: 1)
+        create(:move, game: game, player: :player2, position: 2)
+        create(:move, game: game, player: :player1, position: 5)
+        create(:move, game: game, player: :player2, position: 3)
+        create(:move, game: game, player: :player1, position: 9)
+      end
+
+      let(:move) { build(:move, game: game, player: :player2, position: 8) }
+
+      it "is invalid" do
+        expect(move).not_to be_valid
+        expect(move.errors.full_messages).to include("Game is not playing")
+      end
+    end
   end
 end
