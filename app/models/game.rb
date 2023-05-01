@@ -21,10 +21,13 @@ class Game < ApplicationRecord
       [1, 5, 9], [3, 5, 7]             # diagonal
     ]
 
+    player1_positions = moves.player1.pluck(:position)
+    player2_positions = moves.player2.pluck(:position)
+
     winning_positions.each do |positions|
-      if positions.all? { |position| moves.where(position: position).player1.any? }
+      if positions.subarray?(player1_positions)
         return :player1
-      elsif positions.all? { |position| moves.where(position: position).player2.any? }
+      elsif positions.subarray?(player2_positions)
         return :player2
       end
     end
